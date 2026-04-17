@@ -1,6 +1,6 @@
 /* ============================================================
-   WINFORD RESORT – AUTH PAGES (Login & Register)
-   Split-panel layout, Agoda-inspired clean authentication
+   HOTEL AVA – AUTH PAGES (Login & Register)
+   Split-panel layout, clean authentication
    ============================================================ */
 
 /* ── Page Layout ─────────────────────────────────────────── */
@@ -34,8 +34,8 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(139, 21, 56, 0.15) 0%,
-    rgba(44, 44, 44, 0.55) 100%
+    rgba(122, 27, 85, 0.15) 0%,
+    rgba(27, 43, 58, 0.65) 100%
   );
 }
 
@@ -157,7 +157,7 @@
 }
 
 .auth-back:hover {
-  color: var(--winford-red);
+  color: #7A1B55;
 }
 
 .auth-back svg {
@@ -193,7 +193,7 @@
   font-family: var(--font-primary);
   font-size: 20px;
   font-weight: 700;
-  color: var(--winford-red);
+  color: #7A1B55;
   letter-spacing: 2px;
 }
 
@@ -258,8 +258,8 @@
 }
 
 .form-input:focus {
-  border-color: var(--winford-red);
-  box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
+  border-color: #7A1B55;
+  box-shadow: 0 0 0 3px rgba(122, 27, 85, 0.12);
 }
 
 /* Password toggle eye */
@@ -358,14 +358,14 @@
   font-family: var(--font-primary);
   font-size: 14px;
   font-weight: 500;
-  color: var(--winford-red);
+  color: #7A1B55;
   text-decoration: none;
   transition: all var(--transition-fast);
 }
 
 .form-link:hover {
   text-decoration: underline;
-  color: var(--winford-red-dark);
+  color: #6A1748;
 }
 
 /* Terms checkbox (register) */
@@ -380,7 +380,7 @@
 }
 
 .form-terms a {
-  color: var(--winford-red);
+  color: #7A1B55;
   font-weight: 500;
   text-decoration: none;
 }
@@ -413,8 +413,8 @@
 }
 
 .auth-submit-btn:hover {
-  background: var(--winford-red-dark);
-  box-shadow: 0 4px 12px rgba(139, 21, 56, 0.4);
+  background: #6A1748;
+  box-shadow: 0 4px 12px rgba(122, 27, 85, 0.4);
   transform: translateY(-1px);
 }
 
@@ -560,7 +560,7 @@
 }
 
 .auth-switch a {
-  color: var(--winford-red);
+  color: #7A1B55;
   font-weight: 600;
   text-decoration: none;
   transition: all var(--transition-fast);
@@ -568,7 +568,7 @@
 
 .auth-switch a:hover {
   text-decoration: underline;
-  color: var(--winford-red-dark);
+  color: #6A1748;
 }
 
 /* ============================================================

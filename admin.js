@@ -1,29 +1,29 @@
 /* ============================================================
-   WINFORD RESORT – ADMIN DASHBOARD JS
+   HOTEL AVA – ADMIN DASHBOARD JS
    Mock data, stat cards, charts (canvas), bookings table
    Management: Staff, Registered Users (Tiers), Guests (Frequent)
    ============================================================ */
 
 // ── Mock Data ─────────────────────────────────────────────
 const bookings = [
-  { id: 'WNF-1001', guest: 'Juan Dela Cruz', email: 'juan@email.com', initials: 'JD', room: 'Deluxe 101', type: 'Deluxe Room', checkin: '2026-04-18', checkout: '2026-04-20', status: 'confirmed', amount: 13600, guests: 2 },
-  { id: 'WNF-1002', guest: 'Maria Santos', email: 'maria@email.com', initials: 'MS', room: 'Suite 205', type: 'Junior Suite', checkin: '2026-04-19', checkout: '2026-04-22', status: 'pending', amount: 29400, guests: 3 },
-  { id: 'WNF-1003', guest: 'Pedro Reyes', email: 'pedro@email.com', initials: 'PR', room: 'Deluxe 108', type: 'Premium Deluxe', checkin: '2026-04-17', checkout: '2026-04-19', status: 'checkedin', amount: 17000, guests: 2 },
-  { id: 'WNF-1004', guest: 'Ana Garcia', email: 'ana@email.com', initials: 'AG', room: 'Deluxe Twin 103', type: 'Deluxe Twin', checkin: '2026-04-15', checkout: '2026-04-17', status: 'checkedout', amount: 11800, guests: 2 },
-  { id: 'WNF-1005', guest: 'Carlos Lim', email: 'carlos@email.com', initials: 'CL', room: 'Suite 301', type: 'Executive Suite', checkin: '2026-04-20', checkout: '2026-04-23', status: 'confirmed', amount: 37500, guests: 2 },
+  { id: 'AVA-1001', guest: 'Juan Dela Cruz', email: 'juan@email.com', initials: 'JD', room: 'Ava Deluxe 101', type: 'Ava Deluxe', checkin: '2026-04-18', checkout: '2026-04-20', status: 'confirmed', amount: 8400, guests: 2 },
+  { id: 'AVA-1002', guest: 'Maria Santos', email: 'maria@email.com', initials: 'MS', room: 'Ava Executive 205', type: 'Ava Executive', checkin: '2026-04-19', checkout: '2026-04-22', status: 'pending', amount: 27000, guests: 3 },
+  { id: 'AVA-1003', guest: 'Pedro Reyes', email: 'pedro@email.com', initials: 'PR', room: 'Ava Premier 108', type: 'Ava Premier', checkin: '2026-04-17', checkout: '2026-04-19', status: 'checkedin', amount: 13000, guests: 2 },
+  { id: 'AVA-1004', guest: 'Ana Garcia', email: 'ana@email.com', initials: 'AG', room: 'Ava Deluxe Twin 103', type: 'Ava Deluxe Twin', checkin: '2026-04-15', checkout: '2026-04-17', status: 'checkedout', amount: 7600, guests: 2 },
+  { id: 'AVA-1005', guest: 'Carlos Lim', email: 'carlos@email.com', initials: 'CL', room: 'Ava Grand Suite 301', type: 'Ava Grand Suite', checkin: '2026-04-20', checkout: '2026-04-23', status: 'confirmed', amount: 33000, guests: 2 },
 ];
 
 const staffMembers = [
-  { id: "S001", name: "Juan Admin", email: "juan@winford.com", phone: "+63 912 345 6789", role: "Administrator", lastLogin: "2 hours ago", dateAdded: "2022-01-15", status: "Active" },
-  { id: "S002", name: "Maria Santos", email: "maria@winford.com", phone: "+63 923 456 7890", role: "Manager", lastLogin: "1 day ago", dateAdded: "2022-03-20", status: "Active" },
-  { id: "S003", name: "Pedro Reyes", email: "pedro@winford.com", phone: "+63 945 678 9012", role: "Receptionist", lastLogin: "3 hours ago", dateAdded: "2023-01-10", status: "Active" },
-  { id: "S004", name: "Ana Garcia", email: "ana@winford.com", phone: "+63 934 567 8901", role: "Receptionist", lastLogin: "5 hours ago", dateAdded: "2023-02-15", status: "Active" },
-  { id: "S005", name: "Carlos Tan", email: "carlos@winford.com", phone: "+63 956 789 0123", role: "Maintenance", lastLogin: "2 days ago", dateAdded: "2022-11-05", status: "Inactive" },
-  { id: "S006", name: "Lisa Wong", email: "lisa@winford.com", phone: "+63 917 890 1234", role: "Manager", lastLogin: "30 minutes ago", dateAdded: "2022-06-18", status: "Active" },
-  { id: "S007", name: "Ramon Cruz", email: "ramon@winford.com", phone: "+63 928 901 2345", role: "Receptionist", lastLogin: "1 hour ago", dateAdded: "2023-05-22", status: "Active" },
-  { id: "S008", name: "Elena Diaz", email: "elena@winford.com", phone: "+63 939 012 3456", role: "Administrator", lastLogin: "Just now", dateAdded: "2022-02-10", status: "Active" },
-  { id: "S009", name: "Miguel Torres", email: "miguel@winford.com", phone: "+63 940 123 4567", role: "Maintenance", lastLogin: "1 week ago", dateAdded: "2023-08-01", status: "Inactive" },
-  { id: "S010", name: "Sofia Lim", email: "sofia@winford.com", phone: "+63 951 234 5678", role: "Receptionist", lastLogin: "4 hours ago", dateAdded: "2023-09-12", status: "Active" }
+  { id: "S001", name: "Juan Admin", email: "juan@hotelava.com", phone: "+63 912 345 6789", role: "Administrator", lastLogin: "2 hours ago", dateAdded: "2022-01-15", status: "Active" },
+  { id: "S002", name: "Maria Santos", email: "maria@hotelava.com", phone: "+63 923 456 7890", role: "Manager", lastLogin: "1 day ago", dateAdded: "2022-03-20", status: "Active" },
+  { id: "S003", name: "Pedro Reyes", email: "pedro@hotelava.com", phone: "+63 945 678 9012", role: "Receptionist", lastLogin: "3 hours ago", dateAdded: "2023-01-10", status: "Active" },
+  { id: "S004", name: "Ana Garcia", email: "ana@hotelava.com", phone: "+63 934 567 8901", role: "Receptionist", lastLogin: "5 hours ago", dateAdded: "2023-02-15", status: "Active" },
+  { id: "S005", name: "Carlos Tan", email: "carlos@hotelava.com", phone: "+63 956 789 0123", role: "Maintenance", lastLogin: "2 days ago", dateAdded: "2022-11-05", status: "Inactive" },
+  { id: "S006", name: "Lisa Wong", email: "lisa@hotelava.com", phone: "+63 917 890 1234", role: "Manager", lastLogin: "30 minutes ago", dateAdded: "2022-06-18", status: "Active" },
+  { id: "S007", name: "Ramon Cruz", email: "ramon@hotelava.com", phone: "+63 928 901 2345", role: "Receptionist", lastLogin: "1 hour ago", dateAdded: "2023-05-22", status: "Active" },
+  { id: "S008", name: "Elena Diaz", email: "elena@hotelava.com", phone: "+63 939 012 3456", role: "Administrator", lastLogin: "Just now", dateAdded: "2022-02-10", status: "Active" },
+  { id: "S009", name: "Miguel Torres", email: "miguel@hotelava.com", phone: "+63 940 123 4567", role: "Maintenance", lastLogin: "1 week ago", dateAdded: "2023-08-01", status: "Inactive" },
+  { id: "S010", name: "Sofia Lim", email: "sofia@hotelava.com", phone: "+63 951 234 5678", role: "Receptionist", lastLogin: "4 hours ago", dateAdded: "2023-09-12", status: "Active" }
 ];
 
 const registeredUsers = [
@@ -74,10 +74,10 @@ const stats = {
 };
 
 const roomStatus = {
-  occupied: 100,
-  available: 24,
-  maintenance: 4,
-  total: 128
+  occupied: 38,
+  available: 10,
+  maintenance: 2,
+  total: 50
 };
 
 const bookingTrends = [
@@ -91,15 +91,15 @@ const bookingTrends = [
 ];
 
 const hotelRooms = [
-  { no: '101', type: 'Deluxe Room', status: 'occupied', guest: 'Juan Dela Cruz' },
-  { no: '102', type: 'Deluxe Room', status: 'available', guest: '' },
-  { no: '103', type: 'Deluxe Twin', status: 'occupied', guest: 'Ana Garcia' },
-  { no: '104', type: 'Deluxe Twin', status: 'maintenance', guest: '' },
-  { no: '201', type: 'Junior Suite', status: 'available', guest: '' },
-  { no: '202', type: 'Junior Suite', status: 'occupied', guest: 'Miguel Torres' },
-  { no: '205', type: 'Junior Suite', status: 'occupied', guest: 'Maria Santos' },
-  { no: '301', type: 'Executive Suite', status: 'occupied', guest: 'Carlos Lim' },
-  { no: '401', type: 'Presidential Suite', status: 'available', guest: '' },
+  { no: '101', type: 'Ava Deluxe', status: 'occupied', guest: 'Juan Dela Cruz' },
+  { no: '102', type: 'Ava Deluxe', status: 'available', guest: '' },
+  { no: '103', type: 'Ava Deluxe Twin', status: 'occupied', guest: 'Ana Garcia' },
+  { no: '104', type: 'Ava Deluxe Twin', status: 'maintenance', guest: '' },
+  { no: '111', type: 'Ava Premier', status: 'available', guest: '' },
+  { no: '112', type: 'Ava Premier', status: 'occupied', guest: 'Miguel Torres' },
+  { no: '205', type: 'Ava Executive', status: 'occupied', guest: 'Maria Santos' },
+  { no: '301', type: 'Ava Grand Suite', status: 'occupied', guest: 'Carlos Lim' },
+  { no: '401', type: 'Ava Penthouse', status: 'available', guest: '' },
 ];
 
 // ── Helpers ───────────────────────────────────────────────
@@ -144,9 +144,9 @@ function getTierBadge(bookings) {
 
 function getRoleBadge(role) {
   const colors = {
-    'Administrator': 'var(--winford-red)',
-    'Manager': 'var(--winford-gold)',
-    'Receptionist': '#17A2B8',
+    'Administrator': '#7A1B55',
+    'Manager': '#77BCBC',
+    'Receptionist': '#2196F3',
     'Maintenance': 'var(--medium-gray)'
   };
   return `<span class="badge" style="background:${colors[role] || '#666'}; color:white; border:none;">${role}</span>`;
@@ -230,7 +230,7 @@ function renderDashboardView(container) {
             ${stats.totalTrend}% vs last month
           </div>
         </div>
-        <div class="stat-card__icon" style="background: rgba(139, 21, 56, 0.1); color: var(--winford-red);">
+        <div class="stat-card__icon" style="background: rgba(122, 27, 85, 0.1); color: #7A1B55;">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
         </div>
       </div>
@@ -260,7 +260,7 @@ function renderDashboardView(container) {
           <div class="stat-card__value">${formatPeso(stats.revenueToday)}</div>
           <div class="stat-card__trend trend--up">${stats.revenueTrend}% since 8 AM</div>
         </div>
-        <div class="stat-card__icon" style="background: rgba(184, 134, 11, 0.1); color: var(--winford-gold);">
+        <div class="stat-card__icon" style="background: rgba(119, 188, 188, 0.12); color: #77BCBC;">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </div>
       </div>
@@ -287,12 +287,12 @@ function renderDashboardView(container) {
           <canvas id="roomAvailabilityChart" style="max-width: 200px;"></canvas>
           <div class="room-stats">
             <div class="room-stat-item">
-              <span class="room-stat-dot" style="background:#8B1538"></span>
+              <span class="room-stat-dot" style="background:#7A1B55"></span>
               <span>Occupied</span>
               <strong>${roomStatus.occupied}</strong>
             </div>
             <div class="room-stat-item">
-              <span class="room-stat-dot" style="background:#B8860B"></span>
+              <span class="room-stat-dot" style="background:#77BCBC"></span>
               <span>Available</span>
               <strong>${roomStatus.available}</strong>
             </div>
@@ -376,7 +376,7 @@ function drawTrendChart() {
   canvas.width = w;
   canvas.height = h;
 
-  ctx.strokeStyle = '#8B1538';
+  ctx.strokeStyle = '#7A1B55';
   ctx.lineWidth = 3;
   ctx.beginPath();
   
@@ -388,7 +388,7 @@ function drawTrendChart() {
     else ctx.lineTo(x, y);
     
     // Points
-    ctx.fillStyle = '#8B1538';
+    ctx.fillStyle = '#7A1B55';
     ctx.fillRect(x-3, y-3, 6, 6);
   });
   ctx.stroke();
@@ -396,7 +396,7 @@ function drawTrendChart() {
   // Fill under
   ctx.lineTo(w, h);
   ctx.lineTo(0, h);
-  ctx.fillStyle = 'rgba(139, 21, 56, 0.05)';
+  ctx.fillStyle = 'rgba(122, 27, 85, 0.05)';
   ctx.fill();
 }
 
@@ -409,7 +409,7 @@ function drawDonutChart() {
   canvas.height = size;
   
   const data = [roomStatus.occupied, roomStatus.available, roomStatus.maintenance];
-  const colors = ['#8B1538', '#B8860B', '#E5E5E5'];
+  const colors = ['#7A1B55', '#77BCBC', '#E5E5E5'];
   const total = data.reduce((a, b) => a + b, 0);
   
   let startAngle = -Math.PI / 2;
@@ -503,7 +503,7 @@ function renderRoomsView(container) {
       ${hotelRooms.map(r => `
         <div class="room-status-card" style="background:white; padding:16px; border-radius:12px; border:1px solid var(--light-gray); text-align:center;">
           <div style="font-size:12px; color:#666; margin-bottom:4px;">${r.type}</div>
-          <div style="font-size:24px; font-weight:700; color:var(--winford-red); margin-bottom:8px;">${r.no}</div>
+          <div style="font-size:24px; font-weight:700; color:#7A1B55; margin-bottom:8px;">${r.no}</div>
           <div class="badge badge--${r.status}" style="width:100%; display:block; margin-bottom:12px;">${r.status.toUpperCase()}</div>
           <div style="font-size:12px; color:${r.guest ? '#2C2C2C' : '#999'}">${r.guest || 'Vacant'}</div>
         </div>
@@ -1183,7 +1183,7 @@ window.handleAddStaff = function() {
         </div>
         <div>
           <label style="font-size:13px; font-weight:600; display:block; margin-bottom:6px">Email:</label>
-          <input type="email" class="topbar__search-input" style="width:100%; padding:0 12px; border:1px solid var(--light-gray);" placeholder="e.g. juan@winford.com">
+          <input type="email" class="topbar__search-input" style="width:100%; padding:0 12px; border:1px solid var(--light-gray);" placeholder="e.g. juan@hotelava.com">
         </div>
         <div>
           <label style="font-size:13px; font-weight:600; display:block; margin-bottom:6px">Phone:</label>
@@ -1200,7 +1200,7 @@ window.handleAddStaff = function() {
         </div>
         <div>
           <label style="font-size:13px; font-weight:600; display:block; margin-bottom:6px">Initial Password:</label>
-          <input type="password" class="topbar__search-input" style="width:100%; padding:0 12px; border:1px solid var(--light-gray);" value="Winford2024!">
+          <input type="password" class="topbar__search-input" style="width:100%; padding:0 12px; border:1px solid var(--light-gray);" value="HotelAva2024!">
           <p style="font-size:11px; color:#666; margin-top:4px">(Staff will be asked to change on first login)</p>
         </div>
       </div>

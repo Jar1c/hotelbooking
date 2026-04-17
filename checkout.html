@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Hotel Ava</title>
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body class="checkout-body">
+
+    <!-- Header -->
+    <header class="checkout-header">
+        <div class="container checkout-nav">
+            <div class="checkout-logo" onclick="window.location.href='index.html'">
+                <span class="logo-violet">HOTEL</span> <span class="logo-gray">AVA</span>
+            </div>
+            <div class="checkout-steps">
+                <span class="step active">1. Guest Details</span>
+                <span class="step-divider"></span>
+                <span class="step">2. Confirmation</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container checkout-container">
+        <!-- Left Column: Forms -->
+        <div class="checkout-main">
+            
+            <!-- Flexible Banner -->
+            <div class="flexible-banner">
+                <div class="flex-banner-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="flex-banner-content">
+                    <h3>Stay flexible! No payment today</h3>
+                    <p>Cancel for free before <span id="cancel-deadline">9 May 2026</span></p>
+                </div>
+                <a href="#" class="learn-more">Learn more</a>
+            </div>
+
+            <!-- Payment Options -->
+            <section class="checkout-section">
+                <h2 class="section-title">Choose your payment option</h2>
+                <div class="payment-grid">
+                    <!-- PayMongo Option -->
+                    <div class="payment-option selected" data-payment="paymongo">
+                        <div class="payment-option-info">
+                            <div class="payment-method-header">
+                                <img src="images/pay mongo.png" alt="PayMongo" class="payment-logo">
+                                <span class="payment-option-name">PayMongo (Cards & E-Wallets)</span>
+                            </div>
+                        </div>
+                        <div class="payment-icons">
+                            <img src="images/gcash logo.png" alt="GCash" class="pay-icon-img" title="GCash">
+                            <img src="images/maya logo.png" alt="Maya" class="pay-icon-img" title="Maya">
+                        </div>
+                    </div>
+
+                    <!-- InstaPay QR Option -->
+                    <div class="payment-option" data-payment="instapay">
+                        <div class="payment-option-info">
+                            <div class="payment-method-header">
+                                <img src="images/instapay logo.png" alt="InstaPay" class="payment-logo">
+                                <span class="payment-option-name">InstaPay QR Code</span>
+                            </div>
+                        </div>
+                        <div class="payment-icons">
+                            <span class="pay-icon" title="InstaPay">QR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QR Code Display Area -->
+                <div id="instapay-qr-container" class="qr-display-container">
+                    <div class="qr-upload-grid">
+                        <div class="qr-column">
+                            <p class="qr-notice">Scan this QR code to pay via InstaPay</p>
+                            <img src="images/instapay qrcode.png" alt="InstaPay QR Code" class="qr-code-image">
+                        </div>
+                        <div class="upload-column">
+                            <p class="upload-notice">Upload Proof of Payment</p>
+                            <div class="custom-upload">
+                                <label for="proof-upload" class="upload-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+                                    Select Screenshot
+                                </label>
+                                <input type="file" id="proof-upload" accept="image/*" hidden>
+                                <div id="filename-display" class="filename-display">No file selected</div>
+                            </div>
+                            <p class="upload-hint">Upload the transaction receipt screenshot to confirm your reservation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-footer">
+                    <span class="footer-item">Billease</span>
+                    <span class="footer-item">Over-the-counter</span>
+                </div>
+            </section>
+
+            <!-- Guest Information -->
+            <section class="checkout-section">
+                <h2 class="section-title">Who's the lead guest?</h2>
+                <p class="section-subtitle">*Required field</p>
+                
+                <form id="checkout-form" class="checkout-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name" class="form-label">First name *</label>
+                            <input type="text" id="first-name" class="form-input" placeholder="Juan" required>
+                            <div class="error-msg" id="first-name-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name" class="form-label">Last name *</label>
+                            <input type="text" id="last-name" class="form-input" placeholder="Dela Cruz" required>
+                            <div class="error-msg" id="last-name-error"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="email" id="email" class="form-input" placeholder="juan@example.com" required>
+                        <div class="error-msg" id="email-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country" class="form-label">Country/region of residence *</label>
+                        <select id="country" class="form-input">
+                            <option value="PH" selected>Philippines</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile" class="form-label">Mobile number *</label>
+                        <div class="mobile-input-wrapper">
+                            <span class="prefix">+63</span>
+                            <input type="tel" id="mobile" class="form-input mobile-input" placeholder="912 345 6789" maxlength="12" required>
+                        </div>
+                        <div class="error-msg" id="mobile-error"></div>
+                    </div>
+
+                    <p class="contact-notice">
+                        Please make sure your contact information is correct. We'll use it to send your booking confirmation and any reminders to assist your booking completion.
+                    </p>
+
+                    <!-- Special Requests -->
+                    <div class="special-requests-section">
+                        <h3 class="subsection-title">Special requests</h3>
+                        <p class="subsection-subtitle">Subject to availability. Your selections will be sent to the property right after you book.</p>
+                        
+                        <div class="preference-group">
+                            <h4>Which type of room would you prefer?</h4>
+                            <div class="preference-options">
+                                <label class="pref-btn">
+                                    <input type="radio" name="room-type" value="non-smoking" checked>
+                                    <span>Non-smoking</span>
+                                </label>
+                                <label class="pref-btn">
+                                    <input type="radio" name="room-type" value="smoking">
+                                    <span>Smoking</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="preference-group">
+                            <h4>Which bed setup would you prefer?</h4>
+                            <div class="preference-options">
+                                <label class="pref-btn">
+                                    <input type="radio" name="bed-setup" value="large" checked>
+                                    <span>I'd like a large bed</span>
+                                </label>
+                                <label class="pref-btn">
+                                    <input type="radio" name="bed-setup" value="twin">
+                                    <span>I'd like twin beds</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="show-more-prefs" onclick="this.classList.toggle('active')">Show additional preferences</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submit-booking" class="btn-primary checkout-submit-btn" disabled>CONFIRM BOOKING</button>
+                </form>
+            </section>
+        </div>
+
+        <!-- Right Column: Summary -->
+        <aside class="checkout-sidebar">
+            <div id="booking-summary-card" class="summary-card">
+                <!-- Populated by JS -->
+                <div class="summary-loader">Loading booking details...</div>
+            </div>
+
+            <div class="benefits-card">
+                <h3>Free room benefits</h3>
+                <ul class="benefits-list">
+                    <li>
+                        <span class="benefit-icon valid"></span>
+                        <div class="benefit-text">
+                            <strong>Fully refundable</strong>
+                            <p>Cancel for free before <span class="deadline">9 May 2026</span></p>
+                            <span class="tag-free">FREE</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon valid"></span>
+                        <div class="benefit-text">
+                            <strong>No payment until <span class="pay-later-date">7 May 2026</span></strong>
+                            <p>No payment today</p>
+                            <span class="tag-free">FREE</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon valid"></span>
+                        <div class="benefit-text">
+                            <strong>Free WiFi</strong>
+                            <span class="tag-free">FREE</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon valid"></span>
+                        <div class="benefit-text">
+                            <strong>Parking</strong>
+                            <span class="tag-free">FREE</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="total-today-card">
+                <div class="total-row">
+                    <span>You will pay today</span>
+                    <span class="total-price">₱0</span>
+                </div>
+                <p class="payment-method-text">tapos sa payment is instapay</p>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Success Modal (Simplified) -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content success-content">
+            <div class="success-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#7A1B55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h2>Booking Confirmed!</h2>
+            <p>Your room at Hotel Ava is reserved.</p>
+            <div class="instapay-instructions">
+                <strong>InstaPay Instructions:</strong>
+                <p>Please settle the amount before your stay using our InstaPay QR code found in your email confirmation.</p>
+            </div>
+            <button class="btn-primary" onclick="window.location.href='index.html'">Return Home</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="shared.js"></script>
+    <script src="rooms.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>

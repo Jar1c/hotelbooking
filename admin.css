@@ -1,19 +1,19 @@
 /* ============================================================
-   WINFORD RESORT – ADMIN DASHBOARD
-   Modern admin panel with dark sidebar & Winford branding
+   HOTEL AVA – ADMIN DASHBOARD
+   Modern admin panel with Deep Navy sidebar & Hotel Ava branding
    ============================================================ */
 
 /* ── Admin Tokens ────────────────────────────────────────── */
 :root {
-  --sidebar-bg: #1A1A1A;
+  --sidebar-bg: #1B2B3A;
   --sidebar-w: 260px;
   --topbar-h: 70px;
-  --page-bg: #F8F9FA;
+  --page-bg: #F7F7F7;
 
   --status-confirmed: #28A745;
   --status-pending: #FFC107;
   --status-cancelled: #DC3545;
-  --status-checkedin: #17A2B8;
+  --status-checkedin: #2196F3;
   --status-checkedout: #6C757D;
 }
 
@@ -55,7 +55,7 @@
 .sidebar__logo-icon {
   width: 36px;
   height: 36px;
-  background: var(--winford-red);
+  background: #7A1B55;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -136,14 +136,14 @@
 }
 
 .sidebar__link.active {
-  background: var(--winford-red);
+  background: #7A1B55;
   color: var(--white);
   font-weight: 600;
-  border-left-color: var(--winford-gold);
+  border-left-color: #77BCBC;
 }
 
 .sidebar__link.active svg {
-  color: var(--winford-gold-light);
+  color: #8ECECE;
 }
 
 .sidebar__badge {
@@ -151,7 +151,7 @@
   font-size: 11px;
   font-weight: 700;
   color: var(--white);
-  background: var(--winford-red);
+  background: #7A1B55;
   padding: 2px 8px;
   border-radius: 10px;
   min-width: 20px;
@@ -175,7 +175,7 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--winford-red), var(--winford-red-dark));
+  background: linear-gradient(135deg, #7A1B55, #6A1748);
   color: var(--white);
   display: flex;
   align-items: center;
@@ -296,8 +296,8 @@
 }
 
 .topbar__search-input:focus {
-  border-color: var(--winford-red);
-  box-shadow: 0 0 0 3px rgba(139,21,56,0.08);
+  border-color: #7A1B55;
+  box-shadow: 0 0 0 3px rgba(122,27,85,0.10);
 }
 
 .topbar__search-icon {
@@ -372,7 +372,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--winford-red), var(--winford-red-dark));
+  background: linear-gradient(135deg, #7A1B55, #6A1748);
   color: var(--white);
   display: flex;
   align-items: center;
@@ -460,13 +460,13 @@
 }
 
 .stat-card__icon--red {
-  background: rgba(139,21,56,0.08);
-  color: var(--winford-red);
+  background: rgba(122,27,85,0.08);
+  color: #7A1B55;
 }
 
 .stat-card__icon--gold {
-  background: rgba(184,134,11,0.08);
-  color: var(--winford-gold);
+  background: rgba(119,188,188,0.12);
+  color: #77BCBC;
 }
 
 .stat-card__icon--gray {
@@ -646,7 +646,7 @@
   font-family: var(--font-primary);
   font-size: 14px;
   font-weight: 500;
-  color: var(--winford-red);
+  color: #7A1B55;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -655,7 +655,7 @@
 }
 
 .table-card__link:hover {
-  color: var(--winford-red-dark);
+  color: #6A1748;
 }
 
 .table-card__link svg {
@@ -754,7 +754,7 @@
 
 .status-badge--pending {
   background: rgba(255,193,7,0.15);
-  color: #B8860B;
+  color: #B08204;
 }
 
 .status-badge--cancelled {
@@ -795,7 +795,7 @@
 }
 
 .action-btn:hover {
-  background: var(--winford-red);
+  background: #7A1B55;
   color: var(--white);
 }
 
@@ -819,13 +819,13 @@
 }
 
 .quick-action-btn--primary {
-  background: var(--winford-red);
+  background: #7A1B55;
   color: var(--white);
 }
 
 .quick-action-btn--primary:hover {
-  background: var(--winford-red-dark);
-  box-shadow: 0 4px 12px rgba(139,21,56,0.3);
+  background: #6A1748;
+  box-shadow: 0 4px 12px rgba(122,27,85,0.3);
 }
 
 .quick-action-btn--secondary {
@@ -835,8 +835,8 @@
 }
 
 .quick-action-btn--secondary:hover {
-  border-color: var(--winford-red);
-  color: var(--winford-red);
+  border-color: #7A1B55;
+  color: #7A1B55;
 }
 
 .quick-action-btn svg {
@@ -1054,7 +1054,7 @@
 }
 
 .room-card--occupied {
-  border-left: 4px solid var(--winford-red);
+  border-left: 4px solid #7A1B55;
 }
 
 .room-card--available {
@@ -1181,13 +1181,13 @@
 }
 
 .btn--primary {
-  background: var(--winford-red);
+  background: #7A1B55;
   color: white;
 }
 
 .btn--primary:hover {
-  background: #72112d;
-  box-shadow: 0 4px 12px rgba(139, 21, 56, 0.2);
+  background: #6A1748;
+  box-shadow: 0 4px 12px rgba(122,27,85,0.25);
 }
 
 .btn--outline {
@@ -1197,8 +1197,8 @@
 }
 
 .btn--outline:hover {
-  border-color: var(--winford-red);
-  color: var(--winford-red);
+  border-color: #7A1B55;
+  color: #7A1B55;
 }
 
 .btn--danger {
@@ -1216,7 +1216,7 @@
 .user-avatar {
   width: 40px;
   height: 40px;
-  background: #F0E6E9;
+  background: #F5E8F0;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1224,7 +1224,7 @@
   font-family: var(--font-primary);
   font-weight: 600;
   font-size: 14px;
-  color: var(--winford-red);
+  color: #7A1B55;
   border: 2px solid white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
@@ -1272,8 +1272,8 @@
 }
 
 .action-menu__item:hover {
-  background: #F8F9FA;
-  color: var(--winford-red);
+  background: #F7F7F7;
+  color: #7A1B55;
 }
 
 .action-menu__divider {
@@ -1319,14 +1319,14 @@
 }
 
 .pagination__btn:hover {
-  border-color: var(--winford-red);
-  color: var(--winford-red);
+  border-color: #7A1B55;
+  color: #7A1B55;
 }
 
 .pagination__btn.active {
-  background: var(--winford-red);
+  background: #7A1B55;
   color: white;
-  border-color: var(--winford-red);
+  border-color: #7A1B55;
 }
 
 /* Modal UI Polish */
@@ -1402,7 +1402,7 @@
   gap: 6px;
 }
 
-.badge--gold { background: #FFF9E6 !important; color: #B8860B !important; border: 1px solid #FFE4B3; }
+.badge--gold { background: #F9EDF4 !important; color: #7A1B55 !important; border: 1px solid #E8B8D4; }
 .badge--silver { background: #F2F2F2 !important; color: #666 !important; border: 1px solid #DDD; }
 .badge--regular { background: white !important; color: #888 !important; border: 1px solid #EEE; }
 
@@ -1418,7 +1418,7 @@
 }
 
 .clickable-name:hover {
-  color: var(--winford-red);
+  color: #7A1B55;
   text-decoration: underline;
 }
 

@@ -1,22 +1,23 @@
 /* ============================================================
-   WINFORD RESORT & CASINO MANILA
+   HOTEL AVA
    Room Booking System – Design System & Page Styles
-   Agoda-Inspired, Conversion-Focused
+   Modern Boutique Hotel, Conversion-Focused
    ============================================================ */
 
 /* ---------- DESIGN TOKENS ---------- */
 :root {
-  /* Primary */
-  --winford-red: #8B1538;
-  --winford-red-dark: #6B0F2A;
-  --winford-red-light: #A91D47;
-  --winford-gold: #B8860B;
-  --winford-gold-light: #D4A017;
-  --winford-brown: #4A2511;
+  /* Primary – Ava Violet */
+  --winford-red: #7A1B55;
+  --winford-red-dark: #6A1748;
+  --winford-red-light: #8B2266;
+  /* Accent – Ava Teal */
+  --winford-gold: #77BCBC;
+  --winford-gold-light: #8ECECE;
+  --winford-brown: #1B2B3A;
 
   /* Supporting */
   --white: #FFFFFF;
-  --cream: #FAF9F6;
+  --cream: #F5F1ED;
   --dark: #2C2C2C;
   --medium-gray: #666666;
   --light-gray: #E5E5E5;
@@ -26,7 +27,7 @@
   --success: #28A745;
   --success-bg: #E8F5E9;
   --success-dark: #2E7D32;
-  --warning: #FF6B35;
+  --warning: #FF9800;
   --warning-bg: #FFF3E0;
   --alert: #DC3545;
 
@@ -37,10 +38,10 @@
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
   --shadow-card: 0 2px 8px rgba(0,0,0,0.08);
-  --shadow-card-hover: 0 4px 16px rgba(0,0,0,0.12);
+  --shadow-card-hover: 0 4px 16px rgba(122,27,85,0.15);
   --shadow-lg: 0 4px 12px rgba(0,0,0,0.15);
   --shadow-xl: 0 8px 24px rgba(0,0,0,0.18);
-  --shadow-red: 0 4px 12px rgba(139,21,56,0.35);
+  --shadow-red: 0 4px 12px rgba(122,27,85,0.4);
 
   /* Radius */
   --radius-sm: 4px;
@@ -545,8 +546,8 @@ select, input {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(44, 44, 44, 0.45) 0%,
-    rgba(139, 21, 56, 0.3) 100%
+    rgba(27, 43, 58, 0.45) 0%,
+    rgba(122, 27, 85, 0.30) 100%
   );
 }
 
@@ -1372,7 +1373,7 @@ select, input {
    SIGN-UP CTA BANNER (Guest Only)
    ============================================================ */
 .signup-banner {
-  background: linear-gradient(135deg, var(--winford-red), var(--winford-red-dark));
+  background: linear-gradient(135deg, #7A1B55, #6A1748);
   border-radius: var(--radius-lg);
   padding: 40px;
   text-align: center;
@@ -1434,7 +1435,7 @@ select, input {
 
 .signup-banner__btn {
   background: var(--white);
-  color: var(--winford-red);
+  color: #7A1B55;
   font-family: var(--font-primary);
   font-size: 15px;
   font-weight: 700;
@@ -1535,7 +1536,7 @@ select, input {
 .footer__logo-icon {
   width: 32px;
   height: 32px;
-  background: var(--winford-red);
+  background: #7A1B55;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -1960,3 +1961,210 @@ select, input {
     padding: 8px 12px;
   }
 }
+
+/* ── Booking Modal ────────────────────────────────────────── */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--white);
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--radius-lg);
+  position: relative;
+  padding: 40px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--medium-gray);
+  line-height: 1;
+}
+
+.booking-header {
+  margin-bottom: 24px;
+}
+
+.booking-title {
+  font-family: var(--font-primary);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.booking-subtitle {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--medium-gray);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.required {
+  color: #DC3545;
+}
+
+.form-input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-md);
+  padding: 0 16px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--dark);
+  background: var(--white);
+  transition: all var(--transition-fast);
+}
+
+.form-input::placeholder {
+  color: #999;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #7A1B55;
+  box-shadow: 0 0 0 3px rgba(122, 27, 85, 0.1);
+}
+
+.form-input.invalid {
+  border-color: #DC3545;
+}
+
+.mobile-input-container {
+  display: flex;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+.mobile-input-container:focus-within {
+  border-color: #7A1B55;
+  box-shadow: 0 0 0 3px rgba(122, 27, 85, 0.1);
+}
+
+.phone-prefix {
+  background: #F8F9FA;
+  border-right: 1px solid var(--light-gray);
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--dark);
+  flex-shrink: 0;
+}
+
+.mobile-input {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.form-textarea {
+  height: 100px;
+  padding: 12px 16px;
+  resize: none;
+}
+
+.error-msg {
+  color: #DC3545;
+  font-size: 13px;
+  margin-top: 4px;
+  min-height: 18px;
+}
+
+.privacy-notice {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--medium-gray);
+  text-align: center;
+  margin: 24px 0;
+}
+
+.privacy-notice a {
+  color: #7A1B55;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.booking-submit-btn {
+  width: 100%;
+  height: 54px;
+  background: #7A1B55;
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.booking-submit-btn:hover:not(:disabled) {
+  background: #5C1440;
+  transform: translateY(-1px);
+}
+
+.booking-submit-btn:disabled {
+  background: var(--light-gray);
+  cursor: not-allowed;
+}
+
+.booking-summary {
+  background: var(--cream);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+}
+
+.booking-summary__room {
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.booking-summary__price {
+  color: #7A1B55;
+  font-weight: 600;
+}
+
