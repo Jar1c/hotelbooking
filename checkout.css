@@ -1,0 +1,668 @@
+/* ============================================================
+   HOTEL AVA – CHECKOUT STYLES
+   Agoda-style premium checkout experience
+   ============================================================ */
+
+:root {
+  --bg-checkout: #F5F7FA;
+  --white: #ffffff;
+  --violet: #7A1B55;
+  --violet-light: #F9F0F6;
+  --text-dark: #1B2B3A;
+  --text-gray: #4A5568;
+  --border-light: #E2E8F0;
+  --accent-teal: #77BCBC;
+  --alert-green: #2D8A2D;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.checkout-body {
+  background-color: var(--bg-checkout);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+}
+
+.checkout-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border-light);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.checkout-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout-logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.checkout-steps {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-gray);
+}
+
+.checkout-steps .step.active {
+  color: var(--violet);
+}
+
+.step-divider {
+  width: 24px;
+  height: 1px;
+  background: var(--border-light);
+}
+
+.checkout-container {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 24px;
+  padding: 24px 0 60px;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .checkout-container {
+    grid-template-columns: 1fr;
+  }
+  .checkout-sidebar {
+    order: -1;
+  }
+}
+
+/* ── Left Main Content ────────────────────────────────────── */
+.checkout-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.flexible-banner {
+  background: var(--violet-light);
+  border: 1px solid rgba(122, 27, 85, 0.1);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+.flex-banner-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--violet);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-banner-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 2px;
+  color: var(--violet);
+}
+
+.flex-banner-content p {
+  font-size: 13px;
+  margin: 0;
+  color: var(--text-gray);
+}
+
+.learn-more {
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--violet);
+  text-decoration: underline;
+}
+
+.checkout-section {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-gray);
+  margin-bottom: 20px;
+}
+
+/* ── Payment Options ─────────────────────────────────────── */
+.payment-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.payment-option {
+  border: 2px solid var(--border-light);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.payment-option.selected {
+  border-color: var(--violet);
+  background: var(--violet-light);
+}
+
+.payment-option-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.payment-method-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.payment-logo {
+  height: 24px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.payment-option-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.payment-option-tag {
+  font-size: 11px;
+  background: var(--violet);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.pay-icon {
+  width: 32px;
+  height: 20px;
+  background: #eee;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  color: #666;
+}
+
+.pay-icon-img {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
+}
+
+.plus-two {
+  font-size: 10px;
+  background: none;
+  border: none;
+}
+
+.payment-footer {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.footer-item {
+  font-size: 12px;
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+/* ── Form Elements ───────────────────────────────────────── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--violet);
+}
+
+.mobile-input-wrapper {
+  display: flex;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mobile-input-wrapper .prefix {
+  background: #f1f1f1;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  border-right: 1px solid var(--border-light);
+}
+
+.mobile-input-wrapper .form-input {
+  border: none;
+}
+
+.contact-notice {
+  font-size: 12px;
+  color: var(--text-gray);
+  line-height: 1.5;
+  background: #f8f8f8;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: -10px;
+  margin-bottom: 24px;
+}
+
+/* ── Preferences ─────────────────────────────────────────── */
+.special-requests-section {
+  border-top: 1px solid var(--border-light);
+  padding-top: 24px;
+}
+
+.subsection-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.subsection-subtitle {
+  font-size: 13px;
+  color: var(--text-gray);
+  margin-bottom: 16px;
+}
+
+.preference-group {
+  margin-bottom: 20px;
+}
+
+.preference-group h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.preference-options {
+  display: flex;
+  gap: 12px;
+}
+
+.pref-btn {
+  flex: 1;
+  cursor: pointer;
+}
+
+.pref-btn input {
+  display: none;
+}
+
+.pref-btn span {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.pref-btn input:checked + span {
+  border-color: var(--violet);
+  background: var(--violet-light);
+  color: var(--violet);
+}
+
+.show-more-prefs {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--violet);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.checkout-submit-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* ── Right Sidebar Summary ───────────────────────────────── */
+.checkout-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 100px;
+}
+
+.summary-card, .benefits-card, .total-today-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.summary-card {
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+}
+
+.summary-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-light);
+  background: #fafafa;
+}
+
+.summary-room-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.summary-dates {
+  font-size: 13px;
+  color: var(--text-gray);
+}
+
+.summary-content {
+  padding: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.summary-total {
+  border-top: 1px solid var(--border-light);
+  padding-top: 12px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+
+.benefits-list li {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.benefit-icon.valid {
+  width: 18px;
+  height: 18px;
+  background: var(--alert-green);
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  margin-top: 2px;
+}
+
+.benefit-icon.valid::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 3px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.benefit-text strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.benefit-text p {
+  font-size: 12px;
+  color: var(--text-gray);
+  margin: 0;
+}
+
+.tag-free {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--alert-green);
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.total-today-card {
+  background: var(--violet);
+  color: white;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.payment-method-text {
+  font-size: 12px;
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+/* ── Success Modal Overrides ──────────────────────────────── */
+.success-content {
+  text-align: center;
+  padding: 40px;
+}
+
+.success-icon {
+  margin-bottom: 20px;
+}
+
+.instapay-instructions {
+  background: #fdf2f8;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px dashed var(--violet);
+  margin: 20px 0;
+  text-align: left;
+}
+
+.instapay-instructions strong {
+  color: var(--violet);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.instapay-instructions p {
+  font-size: 13px;
+  margin: 0;
+  color: var(--text-gray);
+}
+
+/* ── QR Code & Upload Display ────────────────────────────── */
+.qr-display-container {
+  display: none;
+  background: #f9f9f9;
+  border: 1px dashed var(--violet);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 20px;
+}
+
+.qr-display-container.active {
+  display: block;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.qr-upload-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+@media (max-width: 600px) {
+  .qr-upload-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+  }
+}
+
+.qr-column, .upload-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-notice, .upload-notice {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--violet);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.qr-code-image {
+  max-width: 180px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  background: white;
+  padding: 8px;
+}
+
+.custom-upload {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--violet);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.upload-btn:hover {
+  opacity: 0.9;
+}
+
+.upload-btn svg {
+  opacity: 0.9;
+}
+
+.filename-display {
+  font-size: 12px;
+  color: var(--text-gray);
+  font-style: italic;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.upload-hint {
+  font-size: 11px;
+  color: var(--text-gray);
+  margin-top: 12px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.error-msg {
+  color: #e53e3e;
+  font-size: 11px;
+  margin-top: 4px;
+  height: 14px;
+}
+
+.form-input.invalid {
+  border-color: #e53e3e;
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Ava - Boutique Hotel in Malate, Manila | AI-Powered Room Booking</title>
+    <meta name="description" content="Book boutique rooms at Hotel Ava, Malate Manila. AI-powered room recommendations, exclusive deals, and 50 beautifully appointed rooms in the heart of Manila.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════
+         NAVIGATION BAR
+         ═══════════════════════════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="container" id="navbar-content">
+            <!-- Rendered by JS -->
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="mobile-drawer__overlay" onclick="closeMobileDrawer()"></div>
+        <div class="mobile-drawer__panel">
+            <!-- Rendered by JS -->
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+         HERO SECTION
+         ═══════════════════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+        <img src="images/hero.png" alt="Hotel Ava boutique hotel exterior in Malate, Manila" class="hero__bg">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <div id="hero-text">
+                <!-- Rendered by JS based on state -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SEARCH BAR
+         ═══════════════════════════════════════════════════════ -->
+    <div class="search-bar">
+        <div class="container">
+            <div class="search-bar__inner">
+                <div class="search-bar__field">
+                    <label class="search-bar__label" for="checkin">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                        Check-in
+                    </label>
+                    <input type="date" id="checkin" class="search-bar__input">
+                </div>
+                <div class="search-bar__field">
+                    <label class="search-bar__label" for="checkout">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                        Check-out
+                    </label>
+                    <input type="date" id="checkout" class="search-bar__input">
+                </div>
+                <div class="search-bar__field">
+                    <label class="search-bar__label" for="guests">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        Guests
+                    </label>
+                    <select id="guests" class="search-bar__select">
+                        <option value="1">1 Guest</option>
+                        <option value="2" selected>2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5">5 Guests</option>
+                        <option value="6">6 Guests</option>
+                    </select>
+                </div>
+                <div class="search-bar__field">
+                    <label class="search-bar__label" for="room-type">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"/><path d="m9 16 .348-.24c1.465-1.013 3.84-1.013 5.304 0L15 16"/></svg>
+                        Room Type
+                    </label>
+                    <select id="room-type" class="search-bar__select">
+                        <option value="all">All Types</option>
+                        <option value="deluxe">Deluxe</option>
+                        <option value="suite">Suite</option>
+                    </select>
+                </div>
+                <div class="search-bar__field">
+                    <label class="search-bar__label" for="budget">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        Budget
+                    </label>
+                    <select id="budget" class="search-bar__select">
+                        <option value="any">Any Budget</option>
+                        <option value="5000">Under ₱5,000</option>
+                        <option value="8000">Under ₱8,000</option>
+                        <option value="10000">Under ₱10,000</option>
+                        <option value="15000">Under ₱15,000</option>
+                        <option value="25000">Under ₱25,000</option>
+                    </select>
+                </div>
+                <button class="search-bar__btn" id="search-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    Search Rooms
+                </button>
+            </div>
+            <div class="hero__cta-message" id="hero-cta-message">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+         QUICK FILTER PILLS
+         ═══════════════════════════════════════════════════════ -->
+    <section class="filter-pills">
+        <div class="container">
+            <div class="filter-pills__inner" id="filter-pills">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         PERSONALIZED RECOMMENDATIONS (Registered User Only)
+         ═══════════════════════════════════════════════════════ -->
+    <section class="personalized-section" id="personalized-section">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-header__title">🎯 Recommended Just For You</h2>
+                    <p class="section-header__subtitle">Based on your previous stays and preferences</p>
+                </div>
+                <a href="#" class="section-header__link">
+                    See all recommendations
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="rec-cards" id="rec-cards">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         MAIN CONTENT: AVAILABLE ROOMS
+         ═══════════════════════════════════════════════════════ -->
+    <main class="rooms-section" id="rooms-section">
+        <div class="container">
+
+            <!-- AI Insights Widget -->
+            <div class="ai-insights">
+                <div class="ai-insights__header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+                    Smart Insights
+                </div>
+                <div class="ai-insights__items">
+                    <div class="ai-insights__item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                        Prices may increase by 15% this weekend
+                    </div>
+                    <div class="ai-insights__item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#28A745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Peak booking: Fridays & Saturdays
+                    </div>
+                    <div class="ai-insights__item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7A1B55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                        5 people are viewing this property
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rooms Header -->
+            <div class="rooms-header">
+                <div>
+                    <h2 class="rooms-header__title">Available Rooms</h2>
+                    <p class="rooms-header__subtitle" id="rooms-subtitle">6 rooms available for your dates</p>
+                </div>
+                <div class="rooms-header__sort">
+                    <span>Sort by:</span>
+                    <select id="sort-select">
+                        <option value="recommended">Recommended</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="rating">Guest Rating</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Room Cards -->
+            <div id="rooms-list">
+                <!-- Rendered by JS -->
+            </div>
+
+
+
+        </div>
+    </main>
+
+    <!-- ═══════════════════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container" id="footer-content">
+            <!-- Rendered by JS -->
+        </div>
+    </footer>
+
+
+
+
+    <!-- App Scripts -->
+    <script src="shared.js"></script>
+    <script src="rooms.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
